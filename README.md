@@ -33,17 +33,17 @@ Open http://localhost:3000 with your browser to see the result.
 **Server:** Nextjs, Socket.IO, Nodejs, npm
 
 ## WebSocket
-<img src="https://github.com/Pritam08pb/AnoTalk/assets/99427618/ebea4c7a-b0cc-4b9e-bf31-857076c9b0c0" alt="WebSocket" width="250" height="120">
+<img src="https://github.com/Pritam08pb/AnoTalk/assets/99427618/ebea4c7a-b0cc-4b9e-bf31-857076c9b0c0" alt="WebSocket" width="420" height="270">
 ![ws]()
 
 ## Features
 
-Anonymous Group Chat: Users can participate in group chat sessions without disclosing their identities.
-Real-Time Communication: AnoTalk enables real-time messaging, providing instant communication between users.
-User-Friendly Interface: The application offers an intuitive and easy-to-use interface for seamless navigation and interaction.
+1. Anonymous Group Chat: Users can participate in group chat sessions without disclosing their identities.
+2. Real-Time Communication: AnoTalk enables real-time messaging, providing instant communication between users.
+3. User-Friendly Interface: The application offers an intuitive and easy-to-use interface for seamless navigation and interaction.
 
 ## UI
-<img src="https://github.com/Pritam08pb/AnoTalk/assets/99427618/1c2dec68-045a-41b9-b2a3-396106eddfab" alt="demo ss" width="400" height="260">
+<img src="https://github.com/Pritam08pb/AnoTalk/assets/99427618/1c2dec68-045a-41b9-b2a3-396106eddfab" alt="demo ss" width="800" height="560">
 
 
 
