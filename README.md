@@ -28,9 +28,16 @@ Open http://localhost:3000 with your browser to see the result.
  
 ## Tech Stack
 
-**Client:- **  React, JavaScript, Nextjs
+**Client:**
+- React
+- JavaScript
+- Next.js
 
-**Server:- **  Nextjs, Socket.IO, Nodejs, npm
+**Server:**
+- Next.js
+- Socket.IO
+- Node.js
+- npm
 
 ## WebSocket
 <img src="https://github.com/Pritam08pb/AnoTalk/assets/99427618/ebea4c7a-b0cc-4b9e-bf31-857076c9b0c0" alt="WebSocket" width="420" height="245">
