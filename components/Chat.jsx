@@ -11,14 +11,13 @@ const Chat = () => {
   const [currentuser, setcurrent] = useState("");
   const [allMessages, setAllMessages] = useState([]);
   const [userCount, setUserCount] = useState(0);
+  const [extra, setextra] = useState(0);
 
   useEffect(() => {
     socketInitializer();
   }, []);
 
-  useEffect(() => {
-   
-  }, [userCount]);
+  useEffect(() => {}, [userCount]);
 
   async function socketInitializer() {
     await fetch("/api/socket");
@@ -51,7 +50,14 @@ const Chat = () => {
       alert("Please enter a valid username and message");
     }
   }
-
+  const fun = () => {
+    setextra(extra + 1);
+    if (extra > 10) {
+      alert("over time");
+    } else {
+      alert("still time left");
+    }
+  };
   return (
     <>
       <div className={styles.full}>
@@ -67,7 +73,8 @@ const Chat = () => {
             <div className={styles.logo}>
               <img className={styles.logo1} src="./AT-logo.png" alt="" />
             </div>
-            <div className={styles.cont1}><div className={styles.p}> Online</div>
+            <div className={styles.cont1}>
+              <div className={styles.p}> Online</div>
               <div className={styles.q}>{Math.floor(userCount / 2)}</div>
             </div>
           </div>
@@ -101,5 +108,5 @@ const Chat = () => {
     </>
   );
 };
-
+// ...................................................................................................................................................
 export default Chat;
