@@ -8,12 +8,17 @@ const Chat = () => {
   const [message, setMessage] = useState("");
   const [username, setUsername] = useState("");
   const [user, setUser] = useState("");
-  const [currentuser,setcurrent]= useState("");
+  const [currentuser, setcurrent] = useState("");
   const [allMessages, setAllMessages] = useState([]);
+  const [userCount, setUserCount] = useState(0);
 
   useEffect(() => {
     socketInitializer();
   }, []);
+
+  useEffect(() => {
+   
+  }, [userCount]);
 
   async function socketInitializer() {
     await fetch("/api/socket");
@@ -24,7 +29,9 @@ const Chat = () => {
         socket.on("receive-message", (data) => {
           setAllMessages((prev) => [...prev, data]);
         });
-       
+        socket.on("userCount", (count) => {
+          setUserCount(count);
+        });
       }
       setUser(socket.id);
       setcurrent(socket.id);
@@ -33,9 +40,7 @@ const Chat = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    if (message != "" && username != "") {
-      // console.log("emitted");
+    if (message !== "" && username !== "") {
       socket.emit("send-message", {
         username,
         message,
@@ -57,7 +62,16 @@ const Chat = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <div className={styles.logo}><img className={styles.logo1} src="./AT-logo.png" alt="" /></div>
+
+          <div className={styles.logocont}>
+            <div className={styles.logo}>
+              <img className={styles.logo1} src="./AT-logo.png" alt="" />
+            </div>
+            <div className={styles.cont1}><div className={styles.p}> Online</div>
+              <div className={styles.q}>{Math.floor(userCount / 2)}</div>
+            </div>
+          </div>
+
           <div className={styles.container}>
             {allMessages.map(({ username, message, user }, index) => (
               <div

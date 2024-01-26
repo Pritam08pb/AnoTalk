@@ -129,11 +129,56 @@
     animation-timing-function: steps(2, end);
 }
 
+.logocont {
+    width: 120px;
+    height: 68px;
+    position: absolute;
+    right: 500px;
+    background-color: rgb(1, 246, 5);
+    display: flex;
+    align-items: center;
+
+}
+
+.cont1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 60px;
+    height: 68px;
+    font-family: 'VT323', monospace;
+    font-size: 28px;
+    overflow: hidden;
+    color: #000000;
+}
+
+.p {
+    font-size: 22px;
+    width: 59px;
+    height: 28px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+    background-color: rgb(0, 0, 0);
+    color: #01F605;
+}
+
+.q {
+    font-size: 32px;
+    width: 2px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+
 .logo {
     width: 60px;
     height: 68px;
-    position: absolute;
-    right: 520px;
+
     overflow: hidden;
 
 
