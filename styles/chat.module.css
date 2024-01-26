@@ -69,8 +69,14 @@
     color: rgb(0, 0, 0);
     text-align: center;
     font-family: 'VT323', monospace;
+
 }
-.text1{color: white;font-size: 20px;}
+
+.text1 {
+    color: white;
+    font-size: 20px;
+}
+
 .form {
     display: flex;
     align-items: center;
@@ -86,14 +92,20 @@
     border: none;
     font-size: 19.4px;
     padding: 20px;
-    background-color:#1D1D1F;
+    background-color: #1D1D1F;
     color: #7aee59;
     text-align: start;
 }
-.input::placeholder{font-family: 'VT323', monospace;font-size: 24px;}
+
+.input::placeholder {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+}
+
 .input:focus {
-    outline: none; 
-  }
+    outline: none;
+}
+
 .uname {
     padding: 2px;
     width: 220px;
@@ -106,62 +118,84 @@
     background-color: #46e21b;
     text-align: center;
     font-family: 'VT323', monospace;
+
 }
-.uname::placeholder{color:black;}
+.logo1{ width: 60px;
+    height: 70px;
 
+    animation: glitch_4011 0.4s;
+    animation-timing-function: steps(2, end);}
 
-/* ------------------------------------------------Responsive---------------------------------------------------- */
-@media only screen and (max-width: 415px) { .container {
-
-
-    display: flex;
-    gap: 4px;
-    padding: 10px;
-    overflow-y: scroll;
-    flex-direction: column;
-    width: 70vw;
-    height: 54vh;
-}
-
-.inner {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
+.logo {
+    width: 60px;
+    height: 68px;
+    position: absolute;
+    right: 520px;
+    overflow: hidden;
+    
+   
 }
 
-.uname {
-    font-size: 22px;
-    width: 200px;
-    height: 32px;
+.uname::placeholder {
+    color: black;
 }
 
-.btn {
-    width: 90px;
-    height: 32px;
-    font-size: 20px;
+
+/* -------------------------------------    -----------Responsive---------------------------------------------------- */
+@media only screen and (max-width: 415px) {
+    .container {
+
+
+        display: flex;
+        gap: 4px;
+        padding: 10px;
+        overflow-y: scroll;
+        flex-direction: column;
+        width: 70vw;
+        height: 54vh;
+    }
+
+    .inner {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .uname {
+        font-size: 22px;
+        width: 200px;
+        height: 32px;
+    }
+
+    .btn {
+        width: 90px;
+        height: 32px;
+        font-size: 20px;
+    }
+
+    .form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        flex-direction: column;
+    }
+
+    .input {
+        padding: 4px;
+        width: 240px;
+        height: 32px;
+        border-radius: 4px;
+        border: none;
+        font-size: 15px;
+        padding: 2px;
+    }
 }
 
-.form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    flex-direction: column;
-}
-
-.input {
-    padding: 4px;
-    width: 240px;
-    height: 32px;
-    border-radius: 4px;
-    border: none;
-    font-size: 15px;
-    padding: 2px;
-}}
 @media only screen and (max-width: 376px) {
     .container {
-       
+
         display: flex;
         gap: 4px;
         padding: 10px;
@@ -208,4 +242,63 @@
         padding: 2px;
     }
 
+}
+
+
+
+
+@keyframes glitch_4011 {
+    0% {
+        clip-path: var(--move1);
+        transform: translate(0px, -10px);
+    }
+
+    10% {
+        clip-path: var(--move2);
+        transform: translate(-10px, 10px);
+    }
+
+    20% {
+        clip-path: var(--move3);
+        transform: translate(10px, 0px);
+    }
+
+    30% {
+        clip-path: var(--move4);
+        transform: translate(-10px, 10px);
+    }
+
+    40% {
+        clip-path: var(--move5);
+        transform: translate(10px, -10px);
+    }
+
+    50% {
+        clip-path: var(--move6);
+        transform: translate(-10px, 10px);
+    }
+
+    60% {
+        clip-path: var(--move1);
+        transform: translate(10px, -10px);
+    }
+
+    70% {
+        clip-path: var(--move3);
+        transform: translate(-10px, 10px);
+    }
+
+    80% {
+        clip-path: var(--move2);
+        transform: translate(10px, -10px);
+    }
+
+    90% {
+        clip-path: var(--move4);
+        transform: translate(-10px, 10px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
 }

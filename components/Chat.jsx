@@ -57,6 +57,7 @@ const Chat = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
+          <div className={styles.logo}><img className={styles.logo1} src="./AT-logo.png" alt="" /></div>
           <div className={styles.container}>
             {allMessages.map(({ username, message, user }, index) => (
               <div
