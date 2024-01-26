@@ -190,6 +190,11 @@
 
 
 /* -------------------------------------    -----------Responsive---------------------------------------------------- */
+@media only screen and (max-width: 1324px) {
+    .logocont {
+        right: 300px;
+    }
+}
 @media only screen and (max-width: 415px) {
     .container {
         gap: 4px;
