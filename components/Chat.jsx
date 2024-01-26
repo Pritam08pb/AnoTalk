@@ -50,14 +50,6 @@ const Chat = () => {
       alert("Please enter a valid username and message");
     }
   }
-  const fun = () => {
-    setextra(extra + 1);
-    if (extra > 10) {
-      alert("over time");
-    } else {
-      alert("still time left");
-    }
-  };
   const fun1 = () => {
     setextra(extra + 1);
     if (extra > 10) {
@@ -67,6 +59,22 @@ const Chat = () => {
     }
   };
   const fun2 = () => {
+    setextra(extra + 1);
+    if (extra > 10) {
+      alert("over time");
+    } else {
+      alert("still time left");
+    }
+  };
+  const fun3 = () => {
+    setextra(extra + 1);
+    if (extra > 10) {
+      alert("over time");
+    } else {
+      alert("still time left");
+    }
+  };
+  const fun4 = () => {
     setextra(extra + 1);
     if (extra > 10) {
       alert("over time");
