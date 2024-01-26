@@ -82,6 +82,14 @@ const Chat = () => {
       alert("still time left");
     }
   };
+  const fun5 = () => {
+    setextra(extra + 1);
+    if (extra > 10) {
+      alert("over time");
+    } else {
+      alert("still time left");
+    }
+  };
   return (
     <>
       <div className={styles.full}>
