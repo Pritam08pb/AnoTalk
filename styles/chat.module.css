@@ -99,9 +99,11 @@
 }
 
 .msg {
+    max-width: 500px;
     background-color: #3A3A3A;
     padding: 8px;
     border-radius: 6px;
+    overflow-wrap: break-word;
 }
 
 .form {

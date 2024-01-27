@@ -12,7 +12,6 @@ const Chat = () => {
   const [currentuser, setcurrent] = useState("");
   const [allMessages, setAllMessages] = useState([]);
   const [userCount, setUserCount] = useState(0);
-  const [extra, setextra] = useState(0);
 
   useEffect(() => {
     console.log("nj");
