@@ -6,6 +6,7 @@
     padding-top: 6vh;
     font-family: monospace;
     position: absolute;
+    overflow: hidden;
 
 }
 
@@ -72,4 +73,8 @@
     justify-content: center;
     text-decoration: none;
     background-color: #3EC65E;
+}
+@media only screen and (max-width: 990px) {
+    .container {
+       display: none;}
 }
