@@ -2,6 +2,7 @@ import styles from "../styles/chat.module.css";
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
 
+
 let socket;
 
 const Chat = () => {
@@ -14,7 +15,13 @@ const Chat = () => {
   const [extra, setextra] = useState(0);
 
   useEffect(() => {
+    console.log("nj");
     socketInitializer();
+    return () => {
+      if (socket) {
+        socket.disconnect();
+      }
+    };
   }, []);
 
   useEffect(() => {}, [userCount]);
@@ -24,6 +31,7 @@ const Chat = () => {
     socket = io();
 
     socket.on("connect", () => {
+      console.log(socket.connected);
       if (socket.connected) {
         socket.on("receive-message", (data) => {
           setAllMessages((prev) => [...prev, data]);
@@ -50,49 +58,15 @@ const Chat = () => {
       alert("Please enter a valid username and message");
     }
   }
-  const fun1 = () => {
-    setextra(extra + 1);
-    if (extra > 10) {
-      alert("over time");
-    } else {
-      alert("still time left");
-    }
-  };
-  const fun2 = () => {
-    setextra(extra + 1);
-    if (extra > 10) {
-      alert("over time");
-    } else {
-      alert("still time left");
-    }
-  };
-  const fun3 = () => {
-    setextra(extra + 1);
-    if (extra > 10) {
-      alert("over time");
-    } else {
-      alert("still time left");
-    }
-  };
-  const fun4 = () => {
-    setextra(extra + 1);
-    if (extra > 10) {
-      alert("over time");
-    } else {
-      alert("still time left");
-    }
-  };
-  const fun5 = () => {
-    setextra(extra + 1);
-    if (extra > 10) {
-      alert("over time");
-    } else {
-      alert("still time left");
-    }
-  };
+
+// ...................................................................................................................................................
+  
+
+
   return (
     <>
       <div className={styles.full}>
+        <a className={styles.l} href="https://pritam08.000webhostapp.com/">Made by Pritam </a>
         <div className={styles.inner}>
           <input
             className={styles.uname}
@@ -117,7 +91,7 @@ const Chat = () => {
                 className={user === currentuser ? styles.text1 : styles.text}
                 key={index}
               >
-                {username} : {message}
+                {username}<div className={styles.msg}>{message}</div> 
               </div>
             ))}
           </div>
@@ -140,5 +114,5 @@ const Chat = () => {
     </>
   );
 };
-// ...................................................................................................................................................
+
 export default Chat;

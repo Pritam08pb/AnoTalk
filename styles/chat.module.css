@@ -6,6 +6,17 @@
     padding-top: 6vh;
     justify-content: center;
     overflow: hidden;
+    position: absolute;
+}
+
+.l {
+    position: absolute;
+    right: 40px;
+    bottom: 50px;
+    text-decoration: none;
+    color: #46E21B;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .inner {
@@ -19,22 +30,20 @@
     background-color: #000000;
     color: #03FF00;
     display: flex;
-    gap: 8px;
+    gap: 12.5px;
     padding: 20px;
     overflow-y: scroll;
+    overflow-wrap: break-word;
     flex-direction: column;
     width: 700px;
     height: 60vh;
     border-radius: 8px;
 }
 
-.text {
-    font-size: 20px;
-}
 
 .container {
     --sb-track-color: #000000;
-    --sb-thumb-color: #4b574b;
+    --sb-thumb-color: #3A3A3A;
     --sb-size: 16px;
 
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
@@ -72,9 +81,27 @@
 
 }
 
+.text {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
 .text1 {
     color: white;
     font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.msg {
+    background-color: #3A3A3A;
+    padding: 8px;
+    border-radius: 6px;
 }
 
 .form {
@@ -108,7 +135,7 @@
 
 .uname {
     padding: 2px;
-    width: 220px;
+    width: 240px;
     height: 34px;
     border-radius: 4px;
     border: none;
@@ -192,9 +219,11 @@
 /* -------------------------------------    -----------Responsive---------------------------------------------------- */
 @media only screen and (max-width: 1324px) {
     .logocont {
-        right: 300px;
+        display:  none;
     }
+    .l{display: none;}
 }
+
 @media only screen and (max-width: 415px) {
     .container {
         gap: 4px;
