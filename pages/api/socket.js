@@ -21,7 +21,12 @@ export default function SocketHandler(req, res) {
     socket.on("send-message", (obj) => {
       io.emit("receive-message", obj);
     });
+    socket.on("send-personal", (objj) => {
+      // Emit the personal message to the specified user identified by their ID
+      io.to(objj.id).emit("receive-personal", objj);
+    });
   });
+  
 
   console.log("Setting up socket");
   res.end();

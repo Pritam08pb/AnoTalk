@@ -14,8 +14,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <img className={styles.container} src="./bg.jpg" alt="" />
+      
       <Chat/>
-      <div className={flag? styles.invisible : styles.container}>
+      {/* <div className={flag? styles.invisible : styles.container}>
       <img className={styles.logo} src="./AT-logo.png" alt="" />
         <div className={styles.inner1}>
           <h1 className={styles.title}>AnoTalk</h1>
@@ -28,7 +30,7 @@ export default function Home() {
         <img className={styles.image} src="./image.png" alt="" />
 
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
