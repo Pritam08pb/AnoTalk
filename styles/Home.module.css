@@ -2,6 +2,7 @@
     height: 100vh;
     width: 100vw;
     filter: blur(100%);
+    filter: grayscale(100%);
     display: flex;
     font-family: monospace;
     position: absolute;

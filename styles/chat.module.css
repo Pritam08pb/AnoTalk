@@ -1,9 +1,8 @@
 .full {
     height: 100vh;
     width: 100vw;
-    background-color: rgba(7, 0, 14, 0.825);
+    background-color: rgba(53, 46, 59, 0.595);
     display: flex;
-    filter: blur(100%);
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -48,7 +47,7 @@
 }
 
 .container {
-    background-color: #1d1d1fc8;
+    background-color: #1d1d1fd8;
     color: #ffffff;
     display: flex;
     gap: 12.5px;
