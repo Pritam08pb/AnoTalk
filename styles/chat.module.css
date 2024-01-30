@@ -10,8 +10,8 @@
     position: absolute;   
 }
 .inside{
-    height: 88vh;
-    width: 62vw;
+    height: 98vh;
+    width: 92vw;
     /* background-color: rgba(52, 52, 58, 0.633); */
     background-color: rgba(191, 180, 204, 0);
     /* border: solid  1px #ffffff; */
@@ -316,7 +316,7 @@
     padding-top: 10px;
     color: #8336f7;
     width: 240px;
-    height: 410px;
+    height: 380px;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
