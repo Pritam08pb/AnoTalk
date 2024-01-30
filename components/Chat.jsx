@@ -145,7 +145,7 @@ const Chat = () => {
                 </div>
                 <div className={styles.cont1}>
                   <div className={styles.p}> Online</div>
-                  <div className={styles.q}>{Math.floor(userCount / 2)}</div>
+                  <div className={styles.q}>{Math.floor(userCount)}</div>
                 </div>
               </div>
               <h2
@@ -240,7 +240,7 @@ const Chat = () => {
                 </div>
                 <div className={styles.cont1}>
                   <div className={styles.p}> Online</div>
-                  <div className={styles.q}>{Math.floor(userCount / 2)}</div>
+                  <div className={styles.q}>{Math.floor(userCount)}</div>
                 </div>
               </div>
               <h2
