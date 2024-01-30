@@ -18,7 +18,6 @@ const Chat = () => {
   const [id, setid] = useState("");
 
   useEffect(() => {
-    console.log("nj");
     socketInitializer();
     return () => {
       if (socket) {
@@ -150,10 +149,9 @@ const Chat = () => {
                 </div>
               </div>
               <h2
+              className={styles.reqh1}
                   style={{
                     fontFamily: " monospace",
-                    height: "10px",
-                    fontSize: "19px",
                   }}
                 >
                   Requsts
@@ -246,11 +244,11 @@ const Chat = () => {
                 </div>
               </div>
               <h2
-                  style={{
-                    fontFamily: " monospace",
-                    height: "10px",
-                    fontSize: "19px",
-                  }}
+                    className={styles.reqh1}
+                    style={{
+                      fontFamily: " monospace",
+                      
+                    }}
                 >
                   Requsts
                 </h2>
