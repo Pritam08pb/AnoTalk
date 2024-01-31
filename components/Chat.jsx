@@ -39,6 +39,9 @@ const Chat = () => {
         socket.on("receive-message", (data) => {
           setAllMessages((prev) => [...prev, data]);
         });
+        socket.on("message-deleted", (deletedMessage) => {
+          setAllMessages(deletedMessage);
+      });
         socket.on("receive-personal", (pdata) => {
           setAllpMessages((previous) => [...previous, pdata]);
           setreqs((previous) => {
@@ -112,14 +115,19 @@ const Chat = () => {
     const updatedReqs = [...reqs];
     updatedReqs.splice(index, 1);
     setreqs(updatedReqs);
+
+    setAllpMessages([]);
+    setflag(false);
+
   };
   const msgdel = (index) => {
 
     const confirmed = window.confirm("Delete this message?");
     if (confirmed) {
-        const updatedMessages = [...allMessages];
-        updatedMessages.splice(index, 1);
-        setAllMessages(updatedMessages);
+      const deletedMessage = allMessages[index]; // Get the message to delete
+      const updatedMessages = allMessages.filter((_, i) => i !== index); // Remove the message from the current client
+      setAllMessages(updatedMessages); // Update the messages in the current client
+      socket.emit("delete-message", updatedMessages);
     }
   };
 
@@ -167,7 +175,7 @@ const Chat = () => {
                     fontFamily: " monospace",
                   }}
                 >
-                  Requsts
+                  Requests
                 </h2>
                 </div>
 
@@ -279,7 +287,7 @@ const Chat = () => {
                       
                     }}
                 >
-                  Requsts
+                  Requests
                 </h2>
                 </div>
 

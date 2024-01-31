@@ -512,9 +512,9 @@ font-size: 18px;}
         
     }
     .uname::placeholder {
-        font-size: 12px;
+        font-size: 10px;
         color: #ffffff;
-        font-weight: 500;
+        font-weight: 400;
     }
     
 .uname {
