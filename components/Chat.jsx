@@ -16,6 +16,7 @@ const Chat = () => {
   const [flag, setflag] = useState(false);
   const [pmessage, setpmessage] = useState("");
   const [id, setid] = useState("");
+  const [tym, settym] = useState(false);
 
   useEffect(() => {
     socketInitializer();
@@ -67,6 +68,8 @@ const Chat = () => {
         user,
         id,
       });
+      let currentDate = new Date();
+      let timeStamp = currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       setAllpMessages((previous) => [
         ...previous,
         {
@@ -74,6 +77,7 @@ const Chat = () => {
           pmessage,
           user,
           id,
+          timeStamp,
         },
       ]);
       setpmessage("");
@@ -104,13 +108,21 @@ const Chat = () => {
     setid(reqs[index].user);
   }
   const handleDelete = (index) => {
-    // Create a copy of the reqs array
+
     const updatedReqs = [...reqs];
-    // Remove the item at the specified index
     updatedReqs.splice(index, 1);
-    // Update the state with the new array
     setreqs(updatedReqs);
   };
+  const msgdel = (index) => {
+
+    const confirmed = window.confirm("Delete this message?");
+    if (confirmed) {
+        const updatedMessages = [...allMessages];
+        updatedMessages.splice(index, 1);
+        setAllMessages(updatedMessages);
+    }
+  };
+
 
   // ..........................................Client-side.........................................................................................................
 
@@ -138,7 +150,8 @@ const Chat = () => {
               >
                 Go back
               </div>
-<div className={styles.parentlogo}>
+<div className={styles.parentlogo}  onMouseEnter={()=>{settym(true)}}
+                  onMouseLeave={()=>{settym(false)}}>
               <div className={styles.logocont}>
                 <div className={styles.logo}>
                   <img className={styles.logo1} src="./AT-logo.png" alt="" />
@@ -161,7 +174,7 @@ const Chat = () => {
 
               <div className={styles.req}>
                 
-                {reqs.map(({ username, pmessage, user, id }, index) => (
+                {reqs.map(({ username, pmessage, user, id, timeStamp }, index) => (
                   <div key={index} className={styles.reqid}>
                     <div  className={styles.requser}
                       style={{ cursor: "pointer", textAlign: "center" }}
@@ -169,7 +182,7 @@ const Chat = () => {
                         flaghandle2(index);
                       }}
                     >
-                      {username.slice(0, 12)}
+                      {username.slice(0, 10)}
                     </div>
 
                     <div
@@ -188,16 +201,31 @@ const Chat = () => {
             <div className={styles.container2}>
             {allpMessages
                   .filter((msg) => msg.user === id || msg.id === id)
-                  .map(({ username, pmessage, user, id }, index) => (
+                  .map(({ username, pmessage, user, id, timeStamp }, index) => (
                     <div
                       className={
                         user === currentuser ? styles.text1 : styles.text
                       }
                       key={index}
                     >
-                      {username}
-                      <div className={styles.msg}>{pmessage}</div>
+                      
+                      {user === currentuser ? (<> {tym && <p className={styles.time}>{timeStamp}</p>} {username}
+                  
+                  <div
+                    className={user === currentuser ? styles.msg : styles.msg1}
+                  >
+                    {pmessage}
+                  </div>
+                 </>) : (<> {username}
+                  
+                  <div
+                    className={user === currentuser ? styles.msg : styles.msg1}
+                  >
+                    {pmessage}
+                  </div>
+                  {tym && <p className={styles.time}>{timeStamp}</p>}</>)}
                     </div>
+                    
                   ))}
             </div>
             <form className={styles.form} onSubmit={handlepsubmit}>
@@ -226,14 +254,15 @@ const Chat = () => {
 
           <div className={styles.parentcontainer}>
   
-            <div className={styles.parentreq}>
+            <div className={styles.parentreq} >
             <input
             className={styles.uname}
             placeholder="Enter an Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-<div className={styles.parentlogo}>
+<div className={styles.parentlogo}  onMouseEnter={()=>{settym(true)}}
+                  onMouseLeave={()=>{settym(false)}}>
               <div className={styles.logocont}>
                 <div className={styles.logo}>
                   <img className={styles.logo1} src="./AT-logo.png" alt="" />
@@ -257,7 +286,7 @@ const Chat = () => {
 
               <div className={styles.req}>
                 
-                {reqs.map(({ username, pmessage, user, id }, index) => (
+                {reqs.map(({ username, pmessage, user, id, timeStamp }, index) => (
                   <div key={index} className={styles.reqid}>
                     <div className={styles.requser}
                       style={{ cursor: "pointer", textAlign: "center" }}
@@ -282,20 +311,30 @@ const Chat = () => {
             </div>
             <div div className={styles.containerinput}>
             <div className={styles.container }>
-              {allMessages.map(({ username, message, user }, index) => (
+              {allMessages.map(({ username, message, user, timeStamp }, index) => (
                 <div
                   className={user === currentuser ? styles.text1 : styles.text}
                   onClick={
-                    user !== currentuser ? () => flaghandle(index) : undefined
+                    user !== currentuser ? () => flaghandle(index) : ()=> msgdel(index)
                   }
                   key={index}
                 >
-                  {username}{" "}
+                {user === currentuser ? (<> {tym && <p className={styles.time}>{timeStamp}</p>} {username}
+                  
                   <div
                     className={user === currentuser ? styles.msg : styles.msg1}
                   >
                     {message}
                   </div>
+                 </>) : (<> {username}
+                  
+                  <div
+                    className={user === currentuser ? styles.msg : styles.msg1}
+                  >
+                    {message}
+                  </div>
+                  {tym && <p className={styles.time}>{timeStamp}</p>}</>)}
+                  
                 </div>
               ))}
             </div>
