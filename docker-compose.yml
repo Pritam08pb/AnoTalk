@@ -1,24 +1,36 @@
 version: "3.8"
 services:
- client-dev:
-  build:
-   context: .
-   dockerfile: Dockerfile.dev
-  ports:
-   - "443:443"
-  volumes:
-   - .:/app
-   - /app/node_modules
-  env_file:
-   - .env.local
- 
- client-prod:
-  build:
-   context: .
-   dockerfile: Dockerfile
-  ports:
-   - "80:80"
-  env_file:
-   - .env
-  
-  
+  client-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "443:443"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env.local
+    depends_on:
+      - mongo
+
+  client-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
