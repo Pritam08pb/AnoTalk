@@ -77,7 +77,7 @@ const Chat = () => {
         socket.on("receive-personal", (pdata) => {
           setAllpMessages((previous) => [...previous, pdata]);
           setreqs((previous) => {
-            const userExists = previous.some((req) => req.user === pdata.user); // userexists in the array
+            const userExists = previous.some((req) => req.user === pdata.user); 
 
             if (!userExists) {
               return [...previous, pdata];
@@ -190,7 +190,7 @@ const Chat = () => {
     <>
       <div className={styles.full}>
         <div className={styles.inside}>
-          <a className={styles.l} href="https://pritam08.000webhostapp.com/">
+          <a className={styles.l} href="https://pritam08.000webhostapp.com/" target="_blank">
             Made by Pritam{" "}
           </a>
 
