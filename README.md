@@ -1,9 +1,11 @@
 
 
 # AnoTalk
-
+http://anotalk.tech <br/>
 
 AnoTalk is a web application designed to facilitate anonymous group chat sessions. It allows users to engage in real-time conversations without revealing their identities. AnoTalk utilizes a combination of frontend and backend technologies to provide a seamless and secure chat experience.
+
+
 
 ## Installation
 
@@ -12,15 +14,16 @@ Install npm first
 ```bash
   npm install
 ```
-Install the prerequisite 
 
-```bash
-  npm i socket.io socket.io-client
-```
 Now run the development server
 
 ```bash
   npm run dev
+```
+Or run through Docker
+
+```bash
+  docker compose up 
 ```
 
 Open http://localhost:3000 with your browser to see the result.
@@ -38,6 +41,8 @@ Open http://localhost:3000 with your browser to see the result.
 - Socket.IO
 - Node.js
 - npm
+- Mongodb
+- mongoose
   
 **Server:**
 - Github
