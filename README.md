@@ -63,7 +63,7 @@ Open http://localhost:3000 with your browser to see the result.
 3. User-Friendly Interface: The application offers an intuitive and easy-to-use interface for seamless navigation and interaction.
 
 ## UI/UX
-<img src="https://github.com/Pritam08pb/AnoTalk/assets/99427618/26ac8634-5ee3-4b78-86ab-04396447af7f" alt="demo ss" width="714" height="114">
+<img src="https://github.com/Pritam08pb/AnoTalk/assets/99427618/26ac8634-5ee3-4b78-86ab-04396447af7f" alt="demo ss" width="714" height="234">
 
 
 
